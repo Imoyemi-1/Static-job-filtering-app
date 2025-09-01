@@ -1,23 +1,25 @@
 function JobCard({ job }) {
-  console.log(job);
   return (
     <article>
-      <img src='' alt='' />
+      <img src={job.logo} alt={job.company} />
       <div>
         <div>
-          <h2>Job Title</h2>
+          <p>{job.company}</p>
+          {job.new && <span>New!</span>}
+          {job.featured && <span>Featured</span>}
         </div>
-        <p>Senior Frontend Developer</p>
+        <h2>{job.position}</h2>
         <ul>
-          <li>1d ago</li>
-          <li>Full Time</li>
-          <li>USA only</li>
+          <li>{job.postedAt}</li>
+          <li>{job.contract}</li>
+          <li>{job.location}</li>
         </ul>
       </div>
       <ul>
-        <li>Frontend</li>
-        <li>React</li>
-        <li>JavaScript</li>
+        <li>{job.role}</li>
+        <li>{job.level}</li>
+        <li>{job.languages.join(', ')}</li>
+        <li>{job.tools.join(', ')}</li>
       </ul>
     </article>
   );

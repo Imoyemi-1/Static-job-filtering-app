@@ -1,6 +1,6 @@
 import JobCard from './JobCard';
-import data from '../data.json';
 import { useState } from 'react';
+import data from '/data.json';
 
 function MainPage() {
   const [jobData, setJobData] = useState(data);
