@@ -1,4 +1,4 @@
-function JobCard({ job, setJobFilter, setFilteredJob }) {
+function JobCard({ job, setFilteredJob }) {
   return (
     <article className='relative bg-white w-full p-6 rounded-lg max-w-[1024px] shadow-md flex flex-col md:flex-row md:items-center md:justify-between gap-4 border-l-4 border-transparent hover:border-green-c-400 transition-colors duration-300 ease-in-out'>
       <img
@@ -32,10 +32,7 @@ function JobCard({ job, setJobFilter, setFilteredJob }) {
       <ul className='flex gap-4 flex-wrap text-green-c-400 font-bold '>
         <li
           onClick={() => {
-            setJobFilter((prev) =>
-              prev.includes(job.role) ? prev : [...prev, job.role]
-            );
-            setFilteredJob();
+            setFilteredJob(job.role);
           }}
           className='bg-green-c-50 px-3 py-1 rounded shadow-sm hover:bg-green-c-400 hover:text-green-c-50 transition-colors duration-300 ease-in-out cursor-pointer'
         >
@@ -43,10 +40,7 @@ function JobCard({ job, setJobFilter, setFilteredJob }) {
         </li>
         <li
           onClick={() => {
-            setJobFilter((prev) =>
-              prev.includes(job.level) ? prev : [...prev, job.level]
-            );
-            setFilteredJob();
+            setFilteredJob(job.level);
           }}
           className='bg-green-c-50 px-3 py-1 rounded shadow-sm hover:bg-green-c-400 hover:text-green-c-50 transition-colors duration-300 ease-in-out cursor-pointer'
         >
@@ -56,10 +50,7 @@ function JobCard({ job, setJobFilter, setFilteredJob }) {
           job.languages.map((lang) => (
             <li
               onClick={() => {
-                setJobFilter((prev) =>
-                  prev.includes(lang) ? prev : [...prev, lang]
-                );
-                setFilteredJob();
+                setFilteredJob(lang);
               }}
               key={lang}
               className='bg-green-c-50 px-3 py-1 rounded shadow-sm hover:bg-green-c-400 hover:text-green-c-50 transition-colors duration-300 ease-in-out cursor-pointer'
@@ -71,10 +62,7 @@ function JobCard({ job, setJobFilter, setFilteredJob }) {
           job.tools.map((tool) => (
             <li
               onClick={() => {
-                setJobFilter((prev) =>
-                  prev.includes(tool) ? prev : [...prev, tool]
-                );
-                setFilteredJob();
+                setFilteredJob(tool);
               }}
               key={tool}
               className='bg-green-c-50 px-3 py-1 rounded shadow-sm hover:bg-green-c-400 hover:text-green-c-50 transition-colors duration-300 ease-in-out cursor-pointer'
