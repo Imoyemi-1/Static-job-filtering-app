@@ -1,4 +1,5 @@
-function JobCard() {
+function JobCard({ job }) {
+  console.log(job);
   return (
     <article>
       <img src='' alt='' />
