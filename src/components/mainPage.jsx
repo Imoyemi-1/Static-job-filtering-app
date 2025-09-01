@@ -6,7 +6,7 @@ function MainPage() {
   const [jobData, setJobData] = useState(data);
 
   return (
-    <main>
+    <main className='flex flex-col md:justify-center gap-y-14 p-6 pt-15 bg-green-c-50 min-h-screen'>
       {jobData.map((job) => (
         <JobCard key={job.id} job={job} />
       ))}
