@@ -1,12 +1,12 @@
 function JobCard({ job }) {
   return (
-    <article className='relative bg-white p-6 rounded-lg shadow-md flex flex-col md:flex-row md:items-center gap-4 border-l-4 border-transparent hover:border-green-c-400 transition-colors duration-300 ease-in-out'>
+    <article className='relative bg-white w-full p-6 rounded-lg max-w-[1024px] shadow-md flex flex-col md:flex-row md:items-center md:justify-between gap-4 border-l-4 border-transparent hover:border-green-c-400 transition-colors duration-300 ease-in-out'>
       <img
-        className='w-16 h-16 md:w-24 md:h-24 rounded absolute -top-8 '
+        className='w-16 h-16 md:w-24 md:h-24 rounded absolute -top-8 md:static'
         src={job.logo}
         alt={job.company}
       />
-      <div className='flex-1 mt-5 border-b border-gray-c-400 pb-4 '>
+      <div className='flex-1 mt-5 md:border-b-0 border-b border-gray-c-400 pb-4 md:mr-4'>
         <div className='flex gap-2 items-center mb-2'>
           <p className='text-green-c-400 font-medium'>{job.company}</p>
           {job.new && (
