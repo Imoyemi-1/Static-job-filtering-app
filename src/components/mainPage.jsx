@@ -74,7 +74,7 @@ function MainPage() {
                   onClick={() => {
                     setJobFilter((prev) => prev.filter((f) => f !== job));
                   }}
-                  className='p-1 bg-black rounded-br-sm rounded-tr-sm shadow-sm px-2'
+                  className='p-1 bg-green-c-400 hover:bg-green-c-900 cursor-pointer duration-300 ease-in-out transition-colors rounded-br-sm rounded-tr-sm shadow-sm px-2'
                 >
                   <img src='/images/icon-remove.svg' alt='remove-icon' />
                 </button>
