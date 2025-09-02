@@ -54,7 +54,7 @@ function MainPage() {
   return (
     <main
       ref={mainRef}
-      className='relative h-fit flex flex-col md:items-center  gap-y-14 p-6 md:gap-y-6  pt-15 bg-green-c-50 min-h-[calc(100vh-150px)] md:min-h-[calc(100vh-200px)]'
+      className='relative h-fit flex flex-col md:items-center  gap-y-14 p-6 md:gap-y-6  pt-15 bg-green-c-50 min-h-[calc(100vh-150px)]]'
     >
       {filteredJobs.map((job) => (
         <JobCard key={job.id} job={job} setFilteredJob={setFilteredJob} />
