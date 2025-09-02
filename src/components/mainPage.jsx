@@ -70,7 +70,12 @@ function MainPage() {
                 <p className='bg-green-c-50 px-3 py-1 rounded-bl-sm rounded-tl-sm shadow-sm font-medium text-green-c-400 '>
                   {job}
                 </p>
-                <button className='p-1 bg-black rounded-br-sm rounded-tr-sm shadow-sm px-2'>
+                <button
+                  onClick={() => {
+                    setJobFilter((prev) => prev.filter((f) => f !== job));
+                  }}
+                  className='p-1 bg-black rounded-br-sm rounded-tr-sm shadow-sm px-2'
+                >
                   <img src='/images/icon-remove.svg' alt='remove-icon' />
                 </button>
               </div>
