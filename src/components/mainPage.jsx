@@ -31,6 +31,13 @@ function MainPage() {
       mainRef.current.style.paddingTop = `${height + 32}px`;
     }
 
+    // remove the height if there are no filters
+    if (!jobFilter.length) {
+      setFilterHeight(0);
+      mainRef.current.style.paddingTop = `3.5rem`;
+    }
+
+    // add event listener to window resize
     window.addEventListener('resize', () => {
       if (filterRef.current) {
         const height = filterRef.current.offsetHeight;
@@ -69,7 +76,10 @@ function MainPage() {
               </div>
             ))}
           </div>
-          <button className='text-gray-c-400 font-medium hover:text-green-c-400 hover:underline underline-offset-1 transition-colors duration-300 cursor-pointer'>
+          <button
+            onClick={() => setJobFilter([])}
+            className='text-gray-c-400 font-medium hover:text-green-c-400 hover:underline underline-offset-1 transition-colors duration-300 cursor-pointer'
+          >
             Clear
           </button>
         </div>
